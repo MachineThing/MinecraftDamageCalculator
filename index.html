@@ -13,22 +13,24 @@
         <noscript>
             <p>This tool requires JavaScript to preform calculations and display the results. Without JavaScript, this tool will not function.</p>
         </noscript>
-        <p>This calculator calculates player versus player damage in Minecraft</p>
+        <p>This calculator calculates player versus player damage in Minecraft Java Edition</p>
         <select name="type" id="weapon_type" onchange="updateType(this.value)">
-            <option value="fist">Fist</option>
+            <option selected value="fist">Fist</option>
             <option value="sword">Sword</option>
             <option value="axe">Axe</option>
             <option value="bow">Bow</option>
             <option value="crossbow">Crossbow</option>
+            <option value="trident">Trident</option>
         </select>
         <select name="material" id="weapon_material" disabled="true">
-            <option value="wood">Wood</option>
+            <option selected value="wood">Wood</option>
             <option value="stone">Stone</option>
             <option value="iron">Iron</option>
             <option value="gold">Gold</option>
             <option value="diamond">Diamond</option>
             <option value="nether">Netherite</option>
         </select>
-        <p id="total_damage">Damage: 0</p>
+        <button type="button" onclick="calculate()">Calculate damage</button>
+        <p id="total_damage"></p>
     </body>
 </html>
