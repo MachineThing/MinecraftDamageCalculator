@@ -8,28 +8,35 @@
         -->
         <title>Minecraft Damage Calculator</title>
     </head>
-    <body>
+    <body onload="init()">
         <h1>Minecraft Damage Calculator</h1>
         <noscript>
             <p>This tool requires JavaScript to preform calculations and display the results. Without JavaScript, this tool will not function.</p>
         </noscript>
         <p>This calculator calculates player versus player damage in Minecraft Java Edition</p>
         <select name="type" id="weapon_type" onchange="updateType(this.value)">
-            <option selected value="fist">Fist</option>
+            <option value="fist">Fist</option>
             <option value="sword">Sword</option>
             <option value="axe">Axe</option>
             <option value="bow">Bow</option>
             <option value="crossbow">Crossbow</option>
             <option value="trident">Trident</option>
         </select>
-        <select name="material" id="weapon_material" disabled="true">
-            <option selected value="wood">Wood</option>
-            <option value="stone">Stone</option>
-            <option value="iron">Iron</option>
-            <option value="gold">Gold</option>
-            <option value="diamond">Diamond</option>
-            <option value="nether">Netherite</option>
-        </select>
+        <br />
+        <div>
+          <h2 id="weapon_name">Fist properties</h2>
+          <p id="weapon_material">Weapon's material:
+            <select name="material" id="weapon_material_select">
+                <option value="wood">Wood</option>
+                <option value="stone">Stone</option>
+                <option value="iron">Iron</option>
+                <option value="gold">Gold</option>
+                <option value="diamond">Diamond</option>
+                <option value="nether">Netherite</option>
+            </select>
+          </p>
+        </div>
+        <br />
         <button type="button" onclick="calculate()">Calculate damage</button>
         <p id="total_damage"></p>
     </body>
